@@ -14,29 +14,29 @@ jobs:
       - name: Compile Java Code
         run: javac -cp ".:junit-4.10.jar" *.java
 
-testAdd:
-  compile:
-    runs-on: ubuntu-latest
-    container: openjdk
+  testAdd:
+    compile:
+      runs-on: ubuntu-latest
+      container: openjdk
 
-    steps:
-      - uses: actions/checkout@v3
+      steps:
+        - uses: actions/checkout@v3
 
-      - name: Compile Java Code
-        run: |
-          javac -cp ".:junit-4.10.jar" *.java
-          java -cp ".:junit-4.10.jar" org.junit.runner.JUnitCore TestAdd.java
+        - name: Compile Java Code
+          run: |
+            javac -cp ".:junit-4.10.jar" *.java
+            java -cp ".:junit-4.10.jar" org.junit.runner.JUnitCore TestAdd.java
 
-testSub:
-  compile:
-    runs-on: ubuntu-latest
-    container: openjdk
+  testSub:
+    compile:
+      runs-on: ubuntu-latest
+      container: openjdk
 
-    steps:
-      - uses: actions/checkout@v3
+      steps:
+        - uses: actions/checkout@v3
 
-      - name: Compile Java Code
-        run: |
-          javac -cp ".:junit-4.10.jar" *.java
-          java -cp ".:junit-4.10.jar" org.junit.runner.JUnitCore TestSub.java
+        - name: Compile Java Code
+          run: |
+            javac -cp ".:junit-4.10.jar" *.java
+            java -cp ".:junit-4.10.jar" org.junit.runner.JUnitCore TestSub.java
 
